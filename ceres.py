@@ -720,7 +720,7 @@ class SliceDeleted(Exception):
 def recalculateSeries(values, old_timeStep, new_timeStep):
   factor = int(new_timeStep/old_timeStep)
   new_values = []
-  for j in [values[i:i+2] for i in range(0, len(values), factor)]:
+  for j in [values[i:i+factor] for i in range(0, len(values), factor)]:
     sub_arr = []
     for v in j:
       if v:
